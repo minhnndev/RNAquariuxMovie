@@ -1,8 +1,8 @@
 import React, {ErrorInfo} from 'react';
 import {ScrollView, TextStyle, View, ViewStyle} from 'react-native';
-import type {ThemedStyle} from '@/theme';
-import {useAppTheme} from '@/utils/useAppTheme';
-import {Button, Icon, Screen, Text} from '@/components/foundation';
+import type {ThemedStyle} from '../../theme';
+import {useAppTheme} from '../../utils/useAppTheme';
+import {Button, Icon, Screen, Text} from '../../components/foundation';
 
 export interface ErrorDetailsProps {
   error: Error;
@@ -23,7 +23,7 @@ export function ErrorDetails(props: ErrorDetailsProps) {
       safeAreaEdges={['top', 'bottom']}
       contentContainerStyle={themed($contentContainer)}>
       <View style={$topSection}>
-        <Icon icon="ladybug" size={64} />
+        <Icon type="Ionicons" name="bug" size={64} />
         <Text
           style={themed($heading)}
           preset="subheading"

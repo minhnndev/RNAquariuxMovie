@@ -7,7 +7,7 @@ import {
   ToggleProps,
   Toggle,
 } from './Toggle';
-import {useAppTheme} from '@/utils/useAppTheme';
+import {useAppTheme} from '../../../utils/useAppTheme';
 
 export interface RadioToggleProps
   extends Omit<ToggleProps<RadioInputProps>, 'ToggleInput'> {

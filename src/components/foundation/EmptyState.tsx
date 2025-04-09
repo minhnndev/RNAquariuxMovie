@@ -11,11 +11,9 @@ import {
 
 import {Button, ButtonProps} from './Button';
 import {Text, TextProps} from './Text';
-import {useAppTheme} from '@/utils/useAppTheme';
-import type {ThemedStyle} from '@/theme';
-import {translate} from '@/i18n/translate';
-
-const sadFace = require('../../assets/images/sad-face.png');
+import {useAppTheme} from '../../utils/useAppTheme';
+import type {ThemedStyle} from '../../theme';
+import {translate} from '../../i18n/translate';
 
 interface EmptyStateProps {
   /**
@@ -133,7 +131,6 @@ export function EmptyState(props: EmptyStateProps) {
 
   const EmptyStatePresets = {
     generic: {
-      imageSource: sadFace,
       heading: translate('emptyStateComponent:generic.heading'),
       content: translate('emptyStateComponent:generic.content'),
       button: translate('emptyStateComponent:generic.button'),

@@ -1,7 +1,6 @@
 import React, {useEffect, useMemo, useRef, useCallback} from 'react';
 import {
   Animated,
-  Image,
   ImageStyle,
   Platform,
   StyleProp,
@@ -10,17 +9,17 @@ import {
   ViewStyle,
 } from 'react-native';
 
-import {$styles} from '@/theme';
-import {iconRegistry} from '@/components/foundation/Icon';
-import {isRTL} from '@/i18n';
+import {$styles} from '../../../theme';
+import {isRTL} from '../../../i18n';
 import {
   $inputOuterBase,
   BaseToggleInputProps,
   Toggle,
   ToggleProps,
 } from './Toggle';
-import {useAppTheme} from '@/utils/useAppTheme';
-import type {ThemedStyle} from '@/theme';
+import {useAppTheme} from '../../../utils/useAppTheme';
+import type {ThemedStyle} from '../../../theme';
+import {Icon} from '../Icon';
 
 export interface SwitchToggleProps
   extends Omit<ToggleProps<SwitchInputProps>, 'ToggleInput'> {
@@ -258,9 +257,11 @@ function SwitchAccessibilityLabel(
       )}
 
       {accessibilityMode === 'icon' && shouldLabelBeVisible && (
-        <Image
-          style={[$switchAccessibilityIcon, {tintColor: color}]}
-          source={role === 'off' ? iconRegistry.hidden : iconRegistry.view}
+        <Icon
+          type="Ionicons"
+          name={role === 'off' ? 'eye-off' : 'eye'}
+          size={14}
+          color={color}
         />
       )}
     </View>

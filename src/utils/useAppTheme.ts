@@ -19,7 +19,7 @@ import {
   type ThemedStyleArray,
   lightTheme,
   darkTheme,
-} from '@/theme';
+} from '../theme';
 
 type ThemeContextType = {
   themeScheme: ThemeContexts;
@@ -40,9 +40,8 @@ const themeContextToTheme = (themeContext: ThemeContexts): Theme =>
   themeContext === 'dark' ? darkTheme : lightTheme;
 
 const setImperativeTheming = (theme: Theme) => {
-  console.log('setImperativeTheming', theme);
-  const colorScheme = Appearance.getColorScheme();
-  return colorScheme;
+  console.log('🚀 ~ setImperativeTheming ~ theme:', theme);
+  return Appearance.getColorScheme();
 };
 
 export const useThemeProvider = (initialTheme: ThemeContexts = undefined) => {

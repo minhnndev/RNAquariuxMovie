@@ -1,4 +1,4 @@
-import {API_ACCESS_TOKEN, API_URL} from '@/utils/constants/APIConstants';
+import {API_ACCESS_TOKEN, API_URL} from '../../utils/constants/APIConstants';
 import axios, {
   AxiosResponse,
   AxiosError,

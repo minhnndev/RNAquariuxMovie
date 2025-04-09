@@ -1,6 +1,6 @@
 import './utils/gestureHandler';
-import {initI18n} from './i18n';
 import './utils/ignoreWarnings';
+import {initI18n} from './i18n';
 import React, {useEffect} from 'react';
 import {
   initialWindowMetrics,
@@ -9,10 +9,11 @@ import {
 import {ErrorBoundary} from './screens/ErrorScreen/ErrorBoundary';
 
 import {KeyboardProvider} from 'react-native-keyboard-controller';
-import {AppNavigator} from './navigators';
+import {Outlet} from './navigators';
 import {loadDateFnsLocale} from './utils/formatDate';
 
-export const NAVIGATION_PERSISTENCE_KEY = 'NAVIGATION_STATE';
+import {queryClient} from './services/queries/queryClient';
+import {PersistQueryClientProvider} from './services/queries/PersistQueryClientProvider';
 
 export function App() {
   useEffect(() => {
@@ -20,12 +21,14 @@ export function App() {
   }, []);
 
   return (
-    <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-      <ErrorBoundary>
-        <KeyboardProvider>
-          <AppNavigator />
-        </KeyboardProvider>
-      </ErrorBoundary>
-    </SafeAreaProvider>
+    <PersistQueryClientProvider client={queryClient}>
+      <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+        <ErrorBoundary>
+          <KeyboardProvider>
+            <Outlet />
+          </KeyboardProvider>
+        </ErrorBoundary>
+      </SafeAreaProvider>
+    </PersistQueryClientProvider>
   );
 }

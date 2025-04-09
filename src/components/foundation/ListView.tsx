@@ -6,7 +6,7 @@ import {
   RefObject,
 } from 'react';
 import {FlatList} from 'react-native';
-import {isRTL} from '@/i18n';
+import {isRTL} from '../../i18n';
 import {FlashList, FlashListProps} from '@shopify/flash-list';
 
 export type ListViewRef<T> = FlashList<T> | FlatList<T>;
