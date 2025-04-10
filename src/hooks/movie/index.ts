@@ -1,9 +1,4 @@
-import {
-  useInfiniteQuery,
-  useQuery,
-  UseQueryOptions,
-  UseInfiniteQueryOptions,
-} from '@tanstack/react-query';
+import {useQuery, UseQueryOptions} from '@tanstack/react-query';
 
 import {
   MovieListResponse,
@@ -14,57 +9,30 @@ import {
 } from '../../services/api/movie/type';
 
 import tmdbClient from '../../services/api/movie';
-import {createInfiniteQuery} from '../../services/queries/utils';
+import {useInfiniteQuery} from '@/services/queries/useInfiniteQuery';
 
-export const useInfiniteNowPlayingMovies = (
-  params: TMDBParams = {},
-  options?: Omit<
-    UseInfiniteQueryOptions<MovieListResponse>,
-    'queryKey' | 'queryFn'
-  >,
-) => {
-  return useInfiniteQuery<MovieListResponse>(
-    createInfiniteQuery<MovieListResponse>(
-      ['nowPlayingMovies', params],
-      tmdbClient.getNowPlayingMovies,
-      params,
-      options,
-    ),
-  );
+export const useNowPlayingMovies = (params: TMDBParams = {}) => {
+  return useInfiniteQuery({
+    queryKey: ['nowPlayingMovies', params],
+    url: '/movie/now_playing',
+    params,
+  });
 };
 
-export const useInfinitePopularMovies = (
-  params: TMDBParams = {},
-  options?: Omit<
-    UseInfiniteQueryOptions<MovieListResponse>,
-    'queryKey' | 'queryFn'
-  >,
-) => {
-  return useInfiniteQuery<MovieListResponse>(
-    createInfiniteQuery<MovieListResponse>(
-      ['popularMovies', params],
-      tmdbClient.getPopularMovies,
-      params,
-      options,
-    ),
-  );
+export const usePopularMovies = (params: TMDBParams = {}) => {
+  return useInfiniteQuery({
+    queryKey: ['popularMovies', params],
+    url: '/movie/popular',
+    params,
+  });
 };
 
-export const useInfiniteUpcomingMovies = (
-  params: TMDBParams = {},
-  options?: Omit<
-    UseInfiniteQueryOptions<MovieListResponse>,
-    'queryKey' | 'queryFn'
-  >,
-) => {
-  return useInfiniteQuery<MovieListResponse>(
-    createInfiniteQuery<MovieListResponse>(
-      ['upcomingMovies', params],
-      tmdbClient.getUpcomingMovies,
-      params,
-      options,
-    ),
-  );
+export const useUpcomingMovies = (params: TMDBParams = {}) => {
+  return useInfiniteQuery({
+    queryKey: ['upcomingMovies', params],
+    url: '/movie/upcoming',
+    params,
+  });
 };
 
 // Regular query hooks
@@ -141,4 +109,25 @@ export const useMovieRecommendations = (
     enabled: !!movieId,
     ...options,
   });
+};
+
+export const useMovieRecommendationsInfinite = (
+  movieId: number | undefined,
+  params: TMDBParams = {},
+) => {
+  const query = useInfiniteQuery({
+    queryKey: ['movieRecommendationsInfinite', movieId, params],
+    url: `/movie/${movieId ?? 0}/recommendations`,
+    params,
+  });
+
+  if (!movieId) {
+    return {
+      ...query,
+      data: [],
+      hasNextPage: false,
+    };
+  }
+
+  return query;
 };

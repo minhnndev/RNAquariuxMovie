@@ -40,7 +40,6 @@ const themeContextToTheme = (themeContext: ThemeContexts): Theme =>
   themeContext === 'dark' ? darkTheme : lightTheme;
 
 const setImperativeTheming = (theme: Theme) => {
-  console.log('🚀 ~ setImperativeTheming ~ theme:', theme);
   return Appearance.getColorScheme();
 };
 
