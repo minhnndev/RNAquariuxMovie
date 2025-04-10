@@ -14,6 +14,7 @@ export const axiosInstance = axios.create({
     'Access-Control-Allow-Origin': '*',
     Authorization: `Bearer ${API_ACCESS_TOKEN}`,
   },
+  timeout: 10000,
   paramsSerializer: params => qs.stringify(params),
 });
 
@@ -23,7 +24,6 @@ axiosInstance.interceptors.request.use((config: InternalAxiosRequestConfig) => {
 
 axiosInstance.interceptors.response.use(
   (response: AxiosResponse) => {
-    console.log('🚀 ~ response:', response);
     return response;
   },
   (error: AxiosError) => {

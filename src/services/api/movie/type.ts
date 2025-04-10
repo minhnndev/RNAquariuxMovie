@@ -2,9 +2,26 @@ export interface Movie {
   id: number;
   title: string;
   poster_path: string | null;
+  backdrop_path: string | null;
   overview: string;
   release_date: string;
   vote_average: number;
+  budget: number;
+  revenue: number;
+  logo_path: string | null;
+  runtime: number | null;
+  tagline: string | null;
+  genres: {
+    id: number;
+    name: string;
+  }[];
+  vote_count: number;
+  production_companies: {
+    id: number;
+    name: string;
+    logo_path: string | null;
+  }[];
+  genre_ids: number[];
 }
 
 export interface Pagination {

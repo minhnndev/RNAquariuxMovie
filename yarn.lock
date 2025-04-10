@@ -2085,6 +2085,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-community/blur@npm:^4.4.1":
+  version: 4.4.1
+  resolution: "@react-native-community/blur@npm:4.4.1"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 1e47144b0c00dce562e72ea9f6c3e93d3bb392ec0ea001ce37ff801d9a496c9801927033ee4800bf92ea2ece9de0abe596715add3b7afe3c5d1533e260f5e09e
+  languageName: node
+  linkType: hard
+
 "@react-native-community/cli-clean@npm:15.0.1":
   version: 15.0.1
   resolution: "@react-native-community/cli-clean@npm:15.0.1"
@@ -2260,6 +2270,26 @@ __metadata:
   bin:
     rnc-cli: build/bin.js
   checksum: 26c98ef67b4b89d3af13f2a3b19e51c7b2de5d320ca908cb628ca22b32bff5a17b8a1cc7f4b0ece303c4e53dc10e8ac0e88df9b376e63ebc97acb8d358f78c2e
+  languageName: node
+  linkType: hard
+
+"@react-native-menu/menu@npm:^1.2.3":
+  version: 1.2.3
+  resolution: "@react-native-menu/menu@npm:1.2.3"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: b19dbb1d9583e2e065238c6d343c16b6ed00bc6297a59cc142d9f877484c4e3406cbe5e8f4fb9368b7cfb9eef11cbe0d1c79cccc8b0d725533d15dab02966b95
+  languageName: node
+  linkType: hard
+
+"@react-native-picker/picker@npm:^2.11.0":
+  version: 2.11.0
+  resolution: "@react-native-picker/picker@npm:2.11.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 889107a9c6d6b23404332ec60d7526a6244ff6433be1e06892014849c97dce8a52c1d7c670aa89761ad814da923c7585b2934bf50f8c8431fdb50f28d4a55fe3
   languageName: node
   linkType: hard
 
@@ -3099,9 +3129,12 @@ __metadata:
     "@babel/core": ^7.25.2
     "@babel/preset-env": ^7.25.3
     "@babel/runtime": ^7.25.0
+    "@react-native-community/blur": ^4.4.1
     "@react-native-community/cli": 15.0.1
     "@react-native-community/cli-platform-android": 15.0.1
     "@react-native-community/cli-platform-ios": 15.0.1
+    "@react-native-menu/menu": ^1.2.3
+    "@react-native-picker/picker": ^2.11.0
     "@react-native/babel-preset": 0.76.9
     "@react-native/eslint-config": 0.76.9
     "@react-native/metro-config": 0.76.9
@@ -3128,7 +3161,6 @@ __metadata:
     lodash: ^4.17.21
     metro-react-native-babel-preset: ^0.77.0
     prettier: 2.8.8
-    qs: ^6.14.0
     query-string: ^9.1.1
     react: 18.3.1
     react-i18next: ^15.4.1
@@ -3137,6 +3169,7 @@ __metadata:
     react-native-dotenv: ^3.4.11
     react-native-gesture-handler: ^2.20.2
     react-native-keyboard-controller: ^1.12.7
+    react-native-linear-gradient: ^2.8.3
     react-native-mmkv: ^2.12.2
     react-native-reanimated: ^3.16.1
     react-native-safe-area-context: ^4.12.0
@@ -8357,15 +8390,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:^6.14.0":
-  version: 6.14.0
-  resolution: "qs@npm:6.14.0"
-  dependencies:
-    side-channel: ^1.1.0
-  checksum: 189b52ad4e9a0da1a16aff4c58b2a554a8dad9bd7e287c7da7446059b49ca2e33a49e570480e8be406b87fccebf134f51c373cbce36c8c83859efa0c9b71d635
-  languageName: node
-  linkType: hard
-
 "query-string@npm:^7.1.3":
   version: 7.1.3
   resolution: "query-string@npm:7.1.3"
@@ -8528,6 +8552,16 @@ __metadata:
     react-native: "*"
     react-native-reanimated: ">=3.0.0"
   checksum: ff9a43ad1d86412195a05126b4e23df43cafd794e3a6b3041cea785a7ce017629fd93e70550dde9705eace844b9680fc1ab347a562db125ab65ab40a066d2c85
+  languageName: node
+  linkType: hard
+
+"react-native-linear-gradient@npm:^2.8.3":
+  version: 2.8.3
+  resolution: "react-native-linear-gradient@npm:2.8.3"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: f980d324e551bbc475c6406bdc5250a08242020cbe653412fa169bbdf51e28a502e225de105b4d696d6a1a1b733d44782469020f4936d8b3ce0e2c78e51cf58f
   languageName: node
   linkType: hard
 

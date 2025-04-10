@@ -21,6 +21,7 @@ type UseInfiniteQueryParams = {
   params?: Record<string, unknown>;
   limit?: number;
   options?: UseInfiniteQueryOptions<any, unknown, any, any, QueryKey>;
+  enabled?: boolean;
 };
 
 function useInfiniteQuery({
@@ -29,6 +30,7 @@ function useInfiniteQuery({
   params,
   limit = PER_PAGE,
   options,
+  enabled = true,
 }: UseInfiniteQueryParams) {
   const query = useRQInfiniteQuery({
     queryKey,
@@ -44,6 +46,7 @@ function useInfiniteQuery({
       });
       return response.data;
     },
+    enabled: enabled,
     staleTime: 0,
     gcTime: 0,
     retry: false,

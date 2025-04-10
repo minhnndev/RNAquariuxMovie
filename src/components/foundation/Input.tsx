@@ -35,7 +35,6 @@ export const Input = ({
 };
 
 const $input: ThemedStyle<TextStyle> = ({colors}) => ({
-  backgroundColor: colors.background,
   color: colors.text,
   borderColor: colors.border,
 });
